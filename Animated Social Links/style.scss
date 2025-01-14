@@ -1,0 +1,135 @@
+html {box-sizing: border-box;}
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  background-color: #1c1c1c;
+}
+
+a {
+  text-decoration: none;
+  color: #fff;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 500px;
+  height: 250px;
+  display: flex;
+  justify-content: center;
+  margin: -125px -250px;
+  transform-style: preserve-3d;
+  transform: rotate(-25deg) skew(20deg);
+}
+
+ul li {
+  position: relative;
+  background-color: #292929;
+  margin-right: 15px;
+  width: 25%;
+  tansition: .4s;
+}
+
+ul li:last-of-type {margin-right: 0;}
+
+ul li::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -9px;
+  background-color: #242424;
+  height: 100%;
+  width: 9px;
+  transform-origin: right;
+  transform: skewY(-45deg);
+}
+
+ul li::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  background-color: #242424;
+  width: 100%;
+  height: 10px;
+  transform-origin: top;
+  transform: skewX(-45deg);
+}
+
+ul li span {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex !important;
+  justify-content: center;
+  align-items: center;
+  color: rgba(255, 255, 255, .2);
+  width: 100%;
+  height: 100%;
+  font-size: 3em;
+  transition: .4s;
+}
+
+li:hover a span {
+  z-index: 1000;
+  transition: .5s;
+  color: rgba(255, 255, 255, 1);
+  box-shadow: -1px 1px 1px rgba(0, 0, 0, .05);
+}
+
+li:hover > a span:nth-of-type(1) {transform: translate(10px, -10px);}
+li:hover > a span:nth-of-type(2) {transform: translate(20px, -20px);}
+li:hover > a span:nth-of-type(3) {transform: translate(30px, -30px);}
+li:hover > a span:nth-of-type(4) {transform: translate(40px, -40px);}
+li:hover > a span:nth-of-type(5) {transform: translate(50px, -50px);}
+
+a span:nth-of-type(1) {opacity: .2;}
+a span:nth-of-type(2) {opacity: .4;}
+a span:nth-of-type(3) {opacity: .6;}
+a span:nth-of-type(4) {opacity: .8;}
+a span:nth-of-type(5) {opacity: 1;}
+
+li:nth-of-type(1):hover span {
+  background-color: #d6249f;
+  background-image: linear-gradient(270deg, #fd5949, #d6249f, #285aeb);
+  background-size: 800% 800%;
+  animation: gradient 10s ease infinite;
+}
+
+li:nth-of-type(2):hover span {
+  background-color: #3b5998;
+  background-image: linear-gradient(270deg, #3b5998, #383838);
+  background-size: 400% 400%;
+  animation: gradient 6s ease infinite;
+
+}
+
+li:nth-of-type(3):hover span {
+  background-color: #0077f2;
+  background-image: linear-gradient(270deg, #4cbdff, #0077f2);
+  background-size: 400% 400%;
+  animation: gradient 6s ease infinite;
+}
+
+li:nth-of-type(4):hover span {
+  background-color: #6441a5;
+  background-image: linear-gradient(270deg, #27c6b0, #6441a5);
+  background-size: 400% 400%;
+  animation: gradient 6s ease infinite alternate forwards;
+}
+
+@keyframes gradient {
+  0%{background-position:0% 50%}
+  50%{background-position:100% 50%}
+  100%{background-position:0% 50%}
+}

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script defer src="main.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <div class="nueclock-wrap">
+        <div class="outer-ring"></div>
+        <div class="inner-outer-ring"></div>
+        <div class="mid-ring"></div>
+        <div class="hour"><div class="shimmer"><div></div><div></div><div></div></div></div>
+        <div class="outer-inner-ring"></div>
+        <div class="inner-inner-ring"></div>
+      </div>
+      
+      <div class="minihud ">
+        <div class="metal-ring"></div>
+        <div class="scene">
+          <div class="sky"></div>
+          <div id="timeContainer" ></div>
+          <div class="clouds"></div>
+          <div class="clouds sec"></div>
+        </div>
+      </div>
+      
+      <svg>
+        <filter id="cloud1" x="-50%" y="-50%" width="200%" height="200%">
+          <feTurbulence baseFrequency="0.9" numOctaves="4" seed="2"><animate attributeName="baseFrequency" dur="20s" values="0.05;0.02" keyTimes="0; 1" repeatCount="indefinite"/></feTurbulence>
+          <feOffset dx="200" dy="100" /><feDisplacementMap in="SourceGraphic" scale="20" />
+        </filter>
+        <filter id="cloud2" x="-50%" y="-50%" width="200%" height="200%">
+          <feTurbulence baseFrequency="0.9" numOctaves="3" seed="4"><animate attributeName="baseFrequency" dur="33s" values="0.05;0.02" keyTimes="0; 1" repeatCount="indefinite"/></feTurbulence>
+          <feOffset dx="200" dy="100" /><feDisplacementMap in="SourceGraphic" scale="20" />
+        </filter>
+      </svg>
+</body>
+</html>
